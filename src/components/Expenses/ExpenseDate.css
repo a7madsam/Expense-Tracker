@@ -1,0 +1,34 @@
+.expense-item__date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border: 1px solid white;
+  background-color: #252525;
+  color: white;
+  padding: 8px 0px;
+}
+
+.expense-item__date span:first-child {
+  font-weight: bold;
+  /* font-size: 1.2rem; */
+}
+
+.expense-item__date span:nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.expense-item__date span:last-child {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 669px) {
+  .expense-item__date span:last-child {
+    font-size: 1.5rem;
+  }
+  .expense-item__date {
+    width: 90px;
+  }
+}
