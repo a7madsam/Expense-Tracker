@@ -3,7 +3,8 @@
 <p>
 A web application that allows you to add all your expenses, monitor and track them, and categorize them depending on the year.</br>
 It includes a chart that shows your costs in each month of the selected year depending on the amount of each item's cost.</br> 
-- Each bar in chart --> [sum Of All Expense In Month / Max Expense In Selected Year]
+- Each bar in chart --> [sum Of All Expense In Month / Max Expense In Selected Year]</br>
+Update: all of your added expenses will be stored using local storage, so if you refresh the page all of them will be stored 😊
 </p>
 <h2>Why did I build it ?</h2>
 <p>
