@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense';
 
@@ -9,9 +9,21 @@ function App() {
     title: "A Book",
     price: 123.23
   }]);
+  useEffect(() => {
+    let ourExpenses = localStorage.getItem('expenses');
+    if (ourExpenses) {
+      let our = JSON.parse(ourExpenses);
+      our.forEach(element => {
+        element.date = new Date(element.date);
+      });
+      setExpense(our);
+    }
+  }, [])
   function getExpenseItemData(ExpenseItemData) {
     setExpense(prevState => {
-      return [ExpenseItemData, ...prevState];
+      let newOne = [ExpenseItemData, ...prevState];
+      localStorage.setItem('expenses', JSON.stringify(newOne));
+      return newOne;
     });
   }
   return (
